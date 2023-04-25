@@ -8,7 +8,7 @@
 
 O algoritmo foi implementado em duas funções principais: “apriori” e “association_rules”
 
-### Função “apriori”:
+### Função “apriori”
 ```Julia
 function apriori(transactions::Vector{Vector{Int64}}, articles::Vector{Int64}, threshold::Float64=0.3, max::Int64=4)
     combination_max_size = max
@@ -41,7 +41,7 @@ A função “apriori” gera um conjunto de combinações de produtos e calcula
 As combinações que atingem o suporte mínimo são consideradas frequentes e são armazenadas em uma lista de resultados, além disso, o suporte de cada combinação é
 armazenado em um dicionário para uso posterior na geração de regras de associação.
 
-### Função “association_rules”:
+### Função “association_rules”
 ```Julia
 function association_rules(frequent_items_dict::Dict{Vector{Int64}, Float64}, metric::String="confidence", min_threshold::Float64=0.8, min_lift::Float64=0.0)
     metric_dict = Dict{String,Function}(
@@ -98,7 +98,7 @@ A função “association_rules” recebe como entrada o dicionário de combina�
 
 A função calcula as regras de associação a partir das combinações frequentes usando a métrica especificada e retorna uma tabela contendo as regras encontradas.
 
-### Função “arl_recommender”:
+### Função “arl_recommender”
 ```Julia
 function arl_recommender(rules_df, product_id, rec_count=1)
     sorted_rules = rules_df
