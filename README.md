@@ -6,7 +6,7 @@
 
 ## Funcionamento
 
-o algoritmo foi implementado em duas funções principais: “apriori” e “association_rules”
+O algoritmo foi implementado em duas funções principais: “apriori” e “association_rules”
 
 ### Função “apriori”:
 ```Julia
@@ -36,6 +36,7 @@ end
 ```
 
 A função “apriori” recebe como entrada uma lista de transações onde cada transação é uma lista de produtos comprados, uma lista de produtos contendo itens disponíveis para compra, um limiar de suporte mínimo e um tamanho máximo de combinação.
+
 A função “apriori” gera um conjunto de combinações de produtos e calcula o suporte de cada combinação na lista de transações.
 As combinações que atingem o suporte mínimo são consideradas frequentes e são armazenadas em uma lista de resultados, além disso, o suporte de cada combinação é
 armazenado em um dicionário para uso posterior na geração de regras de associação.
@@ -94,6 +95,7 @@ end
 ```
 
 A função “association_rules” recebe como entrada o dicionário de combinações frequentes e um conjunto de parâmetros que especificam a métrica a ser usada para avaliar as regras de associação, bem como o valor mínimo para essa métrica.
+
 A função calcula as regras de associação a partir das combinações frequentes usando a métrica especificada e retorna uma tabela contendo as regras encontradas.
 
 ### Função “arl_recommender”:
@@ -117,4 +119,5 @@ end
 ```
 
 Por fim, a função “arl_recommender” recebe como entrada a tabela de regras de associação, uma lista de produtos que um cliente já comprou e o número de recomendações a serem geradas.
+
 A função filtra as regras que envolvem algum dos produtos comprados pelo cliente e retorna um conjunto de produtos recomendados, com base nos produtos restantes nas regras, que não foram comprados pelo cliente.
